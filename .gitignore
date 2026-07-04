@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# VS Code
+.vscode/
+
+# Build
+build/
+dist/
+*.spec
+
+# Log
+*.log
+
+# Output
+output/*
+!output/.gitkeep
+
+# Temp
+temp/*
+!temp/.gitkeep
+
+# FFmpeg binárisok
+ffmpeg/*.exe

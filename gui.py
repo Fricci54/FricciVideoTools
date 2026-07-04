@@ -1,5 +1,5 @@
-import customtkinter as ctk
-
+import  customtkinter as ctk
+from tkinter import filedialog
 
 class FricciVideoToolsApp(ctk.CTk):
 
@@ -130,4 +130,38 @@ class FricciVideoToolsApp(ctk.CTk):
 
         self.log.pack(fill="both", expand=True, padx=15, pady=(5, 15))
 
-        self.log.insert("end", "Fricci Video Tools v1.0 elindult...\n")
+        self.log.insert("end", "Fricci Video Tools v1.0 elindult...\n")  
+    def browse_video(self):
+        file = filedialog.askopenfilename(
+            title="Videó kiválasztása",
+            filetypes=[
+                ("Videók", "*.mp4 *.mkv *.avi *.mov"),
+                ("Minden fájl", "*.*")
+            ]
+        )
+
+        if file:
+            self.video_entry.delete(0, "end")
+            self.video_entry.insert(0, file)
+
+    def browse_subtitle(self):
+        file = filedialog.askopenfilename(
+            title="Felirat kiválasztása",
+            filetypes=[
+                ("Felirat", "*.srt *.ass *.ssa"),
+                ("Minden fájl", "*.*")
+            ]
+        )
+
+        if file:
+            self.subtitle_entry.delete(0, "end")
+            self.subtitle_entry.insert(0, file)
+
+    def browse_output(self):
+        folder = filedialog.askdirectory(
+            title="Kimeneti mappa"
+        )
+
+        if folder:
+            self.output_entry.delete(0, "end")
+            self.output_entry.insert(0, folder)
