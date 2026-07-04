@@ -1,10 +1,5 @@
-from gui import FricciVideoToolsApp
-
-
-def main():
-    app = FricciVideoToolsApp()
-    app.mainloop()
-
+from gui import FricciApp
 
 if __name__ == "__main__":
-    main()
+    app = FricciApp()
+    app.mainloop()
